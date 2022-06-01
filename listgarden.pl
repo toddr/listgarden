@@ -18,6 +18,9 @@
 
    use strict;
 
+use FindBin;
+use lib "$FindBin::Bin";
+
    use ListGarden;
 
    use URI;

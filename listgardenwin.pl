@@ -29,6 +29,9 @@
 
    use strict;
 
+use FindBin;
+use lib "$FindBin::Bin";
+
    use PerlTray; # From ActiveState Corporation and included automatically
                  # by the PerlTray program that bundles a Perl interpreter
                  # with the source code as an executable.
