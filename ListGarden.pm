@@ -836,7 +836,7 @@ EOF
          if ($2 > 0) { # file selected
             my $prefix = $1 eq "edit" ? "edit" : "new";
             my @files = split(/\|/, $params{browsefilenames});
-            my ($name, $len) = split(/@/, @files[$2-1]);
+            my ($name, $len) = split(/@/, $files[$2-1]);
             if ($3 eq "i") { # continue from successful info
                $params{$prefix . "itemenclosuretype"} = $name;
                $params{$prefix . "itemenclosurelength"} = $len;
@@ -2229,7 +2229,7 @@ EOF
                $ulfn = $tmpfn;
 
                $tmphtmlfn = "$config_values{datafile}.html.$config_values{feedname}.tmp";
-               my $ok = open (HTMLFILEOUT, "> $tmphtmlfn");
+               $ok = open (HTMLFILEOUT, "> $tmphtmlfn");
                if ($ok) {
                   print HTMLFILEOUT $htmlstream;
                   }
